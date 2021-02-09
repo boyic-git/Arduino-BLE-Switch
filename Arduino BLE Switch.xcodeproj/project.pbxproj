@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E349C64A25D0227200161C62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349C64925D0227200161C62 /* AppDelegate.swift */; };
+		E349C64C25D0227200161C62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349C64B25D0227200161C62 /* SceneDelegate.swift */; };
+		E349C64E25D0227200161C62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349C64D25D0227200161C62 /* ViewController.swift */; };
+		E349C65125D0227200161C62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E349C64F25D0227200161C62 /* Main.storyboard */; };
+		E349C65325D0227400161C62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E349C65225D0227400161C62 /* Assets.xcassets */; };
+		E349C65625D0227400161C62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E349C65425D0227400161C62 /* LaunchScreen.storyboard */; };
+		E349C66125D0227400161C62 /* Arduino_BLE_SwitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349C66025D0227400161C62 /* Arduino_BLE_SwitchTests.swift */; };
+		E349C66C25D0227400161C62 /* Arduino_BLE_SwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349C66B25D0227400161C62 /* Arduino_BLE_SwitchUITests.swift */; };
+		E349C67D25D026FC00161C62 /* ScanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349C67C25D026FC00161C62 /* ScanTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E349C65D25D0227400161C62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E349C63E25D0227200161C62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E349C64525D0227200161C62;
+			remoteInfo = "Arduino BLE Switch";
+		};
+		E349C66825D0227400161C62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E349C63E25D0227200161C62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E349C64525D0227200161C62;
+			remoteInfo = "Arduino BLE Switch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E349C64625D0227200161C62 /* Arduino BLE Switch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arduino BLE Switch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E349C64925D0227200161C62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E349C64B25D0227200161C62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E349C64D25D0227200161C62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E349C65025D0227200161C62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E349C65225D0227400161C62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E349C65525D0227400161C62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E349C65725D0227400161C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E349C65C25D0227400161C62 /* Arduino BLE SwitchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Arduino BLE SwitchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E349C66025D0227400161C62 /* Arduino_BLE_SwitchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arduino_BLE_SwitchTests.swift; sourceTree = "<group>"; };
+		E349C66225D0227400161C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E349C66725D0227400161C62 /* Arduino BLE SwitchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Arduino BLE SwitchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E349C66B25D0227400161C62 /* Arduino_BLE_SwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arduino_BLE_SwitchUITests.swift; sourceTree = "<group>"; };
+		E349C66D25D0227400161C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E349C67C25D026FC00161C62 /* ScanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTableViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E349C64325D0227200161C62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E349C65925D0227400161C62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E349C66425D0227400161C62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E349C63D25D0227200161C62 = {
+			isa = PBXGroup;
+			children = (
+				E349C64825D0227200161C62 /* Arduino BLE Switch */,
+				E349C65F25D0227400161C62 /* Arduino BLE SwitchTests */,
+				E349C66A25D0227400161C62 /* Arduino BLE SwitchUITests */,
+				E349C64725D0227200161C62 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E349C64725D0227200161C62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E349C64625D0227200161C62 /* Arduino BLE Switch.app */,
+				E349C65C25D0227400161C62 /* Arduino BLE SwitchTests.xctest */,
+				E349C66725D0227400161C62 /* Arduino BLE SwitchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E349C64825D0227200161C62 /* Arduino BLE Switch */ = {
+			isa = PBXGroup;
+			children = (
+				E349C64925D0227200161C62 /* AppDelegate.swift */,
+				E349C64B25D0227200161C62 /* SceneDelegate.swift */,
+				E349C64D25D0227200161C62 /* ViewController.swift */,
+				E349C64F25D0227200161C62 /* Main.storyboard */,
+				E349C67C25D026FC00161C62 /* ScanTableViewController.swift */,
+				E349C65225D0227400161C62 /* Assets.xcassets */,
+				E349C65425D0227400161C62 /* LaunchScreen.storyboard */,
+				E349C65725D0227400161C62 /* Info.plist */,
+			);
+			path = "Arduino BLE Switch";
+			sourceTree = "<group>";
+		};
+		E349C65F25D0227400161C62 /* Arduino BLE SwitchTests */ = {
+			isa = PBXGroup;
+			children = (
+				E349C66025D0227400161C62 /* Arduino_BLE_SwitchTests.swift */,
+				E349C66225D0227400161C62 /* Info.plist */,
+			);
+			path = "Arduino BLE SwitchTests";
+			sourceTree = "<group>";
+		};
+		E349C66A25D0227400161C62 /* Arduino BLE SwitchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E349C66B25D0227400161C62 /* Arduino_BLE_SwitchUITests.swift */,
+				E349C66D25D0227400161C62 /* Info.plist */,
+			);
+			path = "Arduino BLE SwitchUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E349C64525D0227200161C62 /* Arduino BLE Switch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E349C67025D0227400161C62 /* Build configuration list for PBXNativeTarget "Arduino BLE Switch" */;
+			buildPhases = (
+				E349C64225D0227200161C62 /* Sources */,
+				E349C64325D0227200161C62 /* Frameworks */,
+				E349C64425D0227200161C62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Arduino BLE Switch";
+			productName = "Arduino BLE Switch";
+			productReference = E349C64625D0227200161C62 /* Arduino BLE Switch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E349C65B25D0227400161C62 /* Arduino BLE SwitchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E349C67325D0227400161C62 /* Build configuration list for PBXNativeTarget "Arduino BLE SwitchTests" */;
+			buildPhases = (
+				E349C65825D0227400161C62 /* Sources */,
+				E349C65925D0227400161C62 /* Frameworks */,
+				E349C65A25D0227400161C62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E349C65E25D0227400161C62 /* PBXTargetDependency */,
+			);
+			name = "Arduino BLE SwitchTests";
+			productName = "Arduino BLE SwitchTests";
+			productReference = E349C65C25D0227400161C62 /* Arduino BLE SwitchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E349C66625D0227400161C62 /* Arduino BLE SwitchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E349C67625D0227400161C62 /* Build configuration list for PBXNativeTarget "Arduino BLE SwitchUITests" */;
+			buildPhases = (
+				E349C66325D0227400161C62 /* Sources */,
+				E349C66425D0227400161C62 /* Frameworks */,
+				E349C66525D0227400161C62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E349C66925D0227400161C62 /* PBXTargetDependency */,
+			);
+			name = "Arduino BLE SwitchUITests";
+			productName = "Arduino BLE SwitchUITests";
+			productReference = E349C66725D0227400161C62 /* Arduino BLE SwitchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E349C63E25D0227200161C62 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					E349C64525D0227200161C62 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					E349C65B25D0227400161C62 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = E349C64525D0227200161C62;
+					};
+					E349C66625D0227400161C62 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = E349C64525D0227200161C62;
+					};
+				};
+			};
+			buildConfigurationList = E349C64125D0227200161C62 /* Build configuration list for PBXProject "Arduino BLE Switch" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E349C63D25D0227200161C62;
+			productRefGroup = E349C64725D0227200161C62 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E349C64525D0227200161C62 /* Arduino BLE Switch */,
+				E349C65B25D0227400161C62 /* Arduino BLE SwitchTests */,
+				E349C66625D0227400161C62 /* Arduino BLE SwitchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E349C64425D0227200161C62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E349C65625D0227400161C62 /* LaunchScreen.storyboard in Resources */,
+				E349C65325D0227400161C62 /* Assets.xcassets in Resources */,
+				E349C65125D0227200161C62 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E349C65A25D0227400161C62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E349C66525D0227400161C62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E349C64225D0227200161C62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E349C67D25D026FC00161C62 /* ScanTableViewController.swift in Sources */,
+				E349C64E25D0227200161C62 /* ViewController.swift in Sources */,
+				E349C64A25D0227200161C62 /* AppDelegate.swift in Sources */,
+				E349C64C25D0227200161C62 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E349C65825D0227400161C62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E349C66125D0227400161C62 /* Arduino_BLE_SwitchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E349C66325D0227400161C62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E349C66C25D0227400161C62 /* Arduino_BLE_SwitchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E349C65E25D0227400161C62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E349C64525D0227200161C62 /* Arduino BLE Switch */;
+			targetProxy = E349C65D25D0227400161C62 /* PBXContainerItemProxy */;
+		};
+		E349C66925D0227400161C62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E349C64525D0227200161C62 /* Arduino BLE Switch */;
+			targetProxy = E349C66825D0227400161C62 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E349C64F25D0227200161C62 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E349C65025D0227200161C62 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E349C65425D0227400161C62 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E349C65525D0227400161C62 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E349C66E25D0227400161C62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E349C66F25D0227400161C62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E349C67125D0227400161C62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C2728DCCY;
+				INFOPLIST_FILE = "Arduino BLE Switch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "boyi.Arduino-BLE-Switch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E349C67225D0227400161C62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C2728DCCY;
+				INFOPLIST_FILE = "Arduino BLE Switch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "boyi.Arduino-BLE-Switch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E349C67425D0227400161C62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C2728DCCY;
+				INFOPLIST_FILE = "Arduino BLE SwitchTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "boyi.Arduino-BLE-SwitchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arduino BLE Switch.app/Arduino BLE Switch";
+			};
+			name = Debug;
+		};
+		E349C67525D0227400161C62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C2728DCCY;
+				INFOPLIST_FILE = "Arduino BLE SwitchTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "boyi.Arduino-BLE-SwitchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arduino BLE Switch.app/Arduino BLE Switch";
+			};
+			name = Release;
+		};
+		E349C67725D0227400161C62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C2728DCCY;
+				INFOPLIST_FILE = "Arduino BLE SwitchUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "boyi.Arduino-BLE-SwitchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Arduino BLE Switch";
+			};
+			name = Debug;
+		};
+		E349C67825D0227400161C62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C2728DCCY;
+				INFOPLIST_FILE = "Arduino BLE SwitchUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "boyi.Arduino-BLE-SwitchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Arduino BLE Switch";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E349C64125D0227200161C62 /* Build configuration list for PBXProject "Arduino BLE Switch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E349C66E25D0227400161C62 /* Debug */,
+				E349C66F25D0227400161C62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E349C67025D0227400161C62 /* Build configuration list for PBXNativeTarget "Arduino BLE Switch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E349C67125D0227400161C62 /* Debug */,
+				E349C67225D0227400161C62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E349C67325D0227400161C62 /* Build configuration list for PBXNativeTarget "Arduino BLE SwitchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E349C67425D0227400161C62 /* Debug */,
+				E349C67525D0227400161C62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E349C67625D0227400161C62 /* Build configuration list for PBXNativeTarget "Arduino BLE SwitchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E349C67725D0227400161C62 /* Debug */,
+				E349C67825D0227400161C62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E349C63E25D0227200161C62 /* Project object */;
+}
