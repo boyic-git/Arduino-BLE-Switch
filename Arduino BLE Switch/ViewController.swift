@@ -128,6 +128,17 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         }
     }
     
+    // react to the Arduino state sent from Arduino by BLE device
+    func updateState(arduinoState: String) {
+        if (arduinoState == "ON") {
+            currentStatus = .ON
+            showOnOffStatus()
+        } else if (arduinoState == "OFF") {
+            currentStatus = .OFF
+            showOnOffStatus()
+        }
+    }
+    
     // MARK: - CBCentralManagerDelegate Methods
 
     // called when peripheral is requested to be disconnected
@@ -203,7 +214,12 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
                     //Set Notify is useful to read incoming data async
                     peripheral.setNotifyValue(true, for: characteristic)
                     print("Found Characteristic")
-
+                    if(characteristic.value != nil) {
+                        let state = String(data: characteristic.value!, encoding: String.Encoding.utf8)!
+                            print(state)
+                            // react to the current Arduino state
+                            updateState(arduinoState: state)
+                    }
                 }
             }
         }
@@ -226,8 +242,10 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         } else if (characteristic.uuid.uuidString == myBLECharacteristic) {
             //data recieved
             if(characteristic.value != nil) {
-                let stringValue = String(data: characteristic.value!, encoding: String.Encoding.utf8)!
-                    print(stringValue)
+                let state = String(data: characteristic.value!, encoding: String.Encoding.utf8)!
+                    print(state)
+                    // react to the current Arduino state
+                    updateState(arduinoState: state)
             }
         }
     }
