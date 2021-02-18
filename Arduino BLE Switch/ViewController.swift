@@ -55,7 +55,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     @IBAction func showAlertButtonTapped() {
 
         // create the alert
-        let alert = UIAlertController(title: "Warning", message: "You are not connected to any device.", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Warning", message: "You are not connected to any devices.", preferredStyle: UIAlertController.Style.alert)
 
         // add the actions (buttons)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
@@ -71,6 +71,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             sendInstruction(instruction: "ON")
             currentStatus = .ON
             showOnOffStatus()
+            feedbackHaptic()
         }
     }
     
@@ -81,12 +82,14 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             sendInstruction(instruction: "OFF")
             currentStatus = .OFF
             showOnOffStatus()
+            feedbackHaptic()
         }
     }
     
     @IBAction func disconnectButtonPressed(_ sender: Any) {
         if (mainPeripheral != nil) {
             manager?.cancelPeripheralConnection(mainPeripheral!)
+            feedbackHaptic()
         } 
     }
     
@@ -139,6 +142,9 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         }
     }
     
+    func feedbackHaptic() {
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+    }
     // MARK: - CBCentralManagerDelegate Methods
 
     // called when peripheral is requested to be disconnected
