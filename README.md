@@ -1,2 +1,2 @@
 # Arduino-BLE-Switch
-A minimal application of BLE switch for Arduino 
+A minimal ios application of BLE switch for Arduino (with Arduino code) 
