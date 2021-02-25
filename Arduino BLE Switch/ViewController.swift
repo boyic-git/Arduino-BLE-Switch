@@ -20,6 +20,11 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     enum Status {case ON, OFF}
     var currentStatus: Status = .OFF
     
+    // for remember function
+    var remember: Bool = false
+    var BleName: String = "None"
+    var peripherals: [CBPeripheral] = []
+    
     @IBOutlet weak var onButton: UIButton!
     @IBOutlet weak var offButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
@@ -27,8 +32,17 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        manager = CBCentralManager(delegate: self, queue: nil);
+        manager = CBCentralManager(delegate: self, queue: nil)
+        
+        if UD.shared.getRemember() {
+            remember = true
+            BleName = UD.shared.getBleName()
+            setdeviceLable(BleName)
+            setRemeberButton(remember)
+        } else {
+            remember = false
+            setdeviceLable("None")
+        }
         
         showBLEStatus()
         showOnOffStatus()
@@ -64,6 +78,62 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         self.present(alert, animated: true, completion: nil)
     }
     
+    // MARK: - for remember function
+    @IBOutlet weak var rememberButton: UIButton!
+    @IBAction func rememberButtonPressed(_ sender: Any) {
+        remember = !remember
+        if !remember {
+            rememberButton.setImage(UIImage(systemName: "square"), for: .normal)
+            UD.shared.defaults.setValue(false, forKey: "remember")
+            UD.shared.defaults.setValue("None", forKey: "name")
+        } else {
+            // remember checked
+            rememberButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            UD.shared.defaults.setValue(true, forKey: "remember")
+            UD.shared.defaults.setValue(deviceLabel.text, forKey: "name")
+        }
+    }
+    
+    @IBOutlet weak var deviceLabel: UILabel!
+    
+    func setdeviceLable(_ name: String) {
+        deviceLabel.text = name
+    }
+    
+    func setRemeberButton(_ remember: Bool) {
+        if !remember {
+            rememberButton.setImage(UIImage(systemName: "square"), for: .normal)
+            UD.shared.defaults.setValue(false, forKey: "remember")
+            UD.shared.defaults.setValue("None", forKey: "name")
+        } else {
+            rememberButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            UD.shared.defaults.setValue(true, forKey: "remember")
+            UD.shared.defaults.setValue(BleName, forKey: "name")
+        }
+    }
+    
+    func connectRemember() {
+        print(peripherals)
+        for peripheral in peripherals {
+            if peripheral.name == BleName {
+                manager?.connect(peripheral, options: nil)
+            }
+        }
+    }
+    
+    func scanBLEDevices() {
+        print("Start searching")
+        manager?.scanForPeripherals(withServices: nil, options: nil)
+
+        //stop scanning after 3 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            self.manager?.stopScan()
+        }
+        print("Stop searching")
+        print(peripherals)
+    }
+    
+    // MARK: - everything else
     @IBAction func onButtonPressed(_ sender: Any) {
         if (mainPeripheral == nil) {
             showAlertButtonTapped()
@@ -115,6 +185,12 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     func showBLEStatus() {
         if (mainPeripheral != nil) {
             statusLabel.text = "Connected!"
+            setdeviceLable((mainPeripheral?.name)!)
+            if remember {
+                UD.shared.defaults.setValue(remember, forKey: "remember")
+                print("set name: \((mainPeripheral?.name)!)")
+                UD.shared.defaults.setValue(mainPeripheral?.name, forKey: "name")
+            }
         } else {
             statusLabel.text = "Disconnected!"
         }
@@ -135,11 +211,11 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     func updateState(arduinoState: String) {
         if (arduinoState == "ON") {
             currentStatus = .ON
-            showOnOffStatus()
         } else if (arduinoState == "OFF") {
             currentStatus = .OFF
-            showOnOffStatus()
         }
+        showOnOffStatus()
+        showBLEStatus()
     }
     
     func feedbackHaptic() {
@@ -157,7 +233,44 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
 
     // required but no use here
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        print(central.state)
+        switch (central.state) {
+            case .unsupported:
+                print("BLE is unsupported")
+            case .unauthorized:
+                print("BLE is unauthorized")
+            case .unknown:
+                print("BLE is unknown")
+            case .resetting:
+                print("BLE is reseting")
+            case .poweredOff:
+                print("BLE is powered off")
+            case .poweredOn:
+                print("BLE is powered on")
+                scanBLEDevices()
+            @unknown default:
+                print("other states")
+        }
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        if(!peripherals.contains(peripheral)) {
+            peripherals.append(peripheral)
+        }
+//        print(peripherals)
+        print(BleName)
+        connectRemember()
+        // if found, then it adds found peripherals to the array and repopulates the table
+    }
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        mainPeripheral = peripheral
+        peripheral.delegate = self
+        peripheral.discoverServices(nil)
+        
+        showBLEStatus()
+        showOnOffStatus()
+        
+        print("Connected to \(peripheral.name!)")
     }
 
     // MARK: CBPeripheralDelegate Methods
@@ -252,6 +365,29 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
                     print(state)
                     // react to the current Arduino state
                     updateState(arduinoState: state)
+            }
+        }
+    }
+    
+    // MARK: - UserDefaults
+    class UD {
+        static let shared = UD()
+        
+        let defaults = UserDefaults()
+        
+        func getRemember() -> Bool {
+            if let remember = defaults.value(forKey: "remember") as? Bool {
+                return remember
+            } else {
+                return false
+            }
+        }
+        
+        func getBleName() -> String {
+            if let bleName = defaults.value(forKey: "name") as? String {
+                return bleName
+            } else {
+                return "None"
             }
         }
     }
