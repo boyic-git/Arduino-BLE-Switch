@@ -13,8 +13,6 @@
 		E349C65125D0227200161C62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E349C64F25D0227200161C62 /* Main.storyboard */; };
 		E349C65325D0227400161C62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E349C65225D0227400161C62 /* Assets.xcassets */; };
 		E349C65625D0227400161C62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E349C65425D0227400161C62 /* LaunchScreen.storyboard */; };
-		E349C66125D0227400161C62 /* Arduino_BLE_SwitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349C66025D0227400161C62 /* Arduino_BLE_SwitchTests.swift */; };
-		E349C66C25D0227400161C62 /* Arduino_BLE_SwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349C66B25D0227400161C62 /* Arduino_BLE_SwitchUITests.swift */; };
 		E349C67D25D026FC00161C62 /* ScanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349C67C25D026FC00161C62 /* ScanTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,11 +43,7 @@
 		E349C65525D0227400161C62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E349C65725D0227400161C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E349C65C25D0227400161C62 /* Arduino BLE SwitchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Arduino BLE SwitchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E349C66025D0227400161C62 /* Arduino_BLE_SwitchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arduino_BLE_SwitchTests.swift; sourceTree = "<group>"; };
-		E349C66225D0227400161C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E349C66725D0227400161C62 /* Arduino BLE SwitchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Arduino BLE SwitchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E349C66B25D0227400161C62 /* Arduino_BLE_SwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arduino_BLE_SwitchUITests.swift; sourceTree = "<group>"; };
-		E349C66D25D0227400161C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E349C67C25D026FC00161C62 /* ScanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,8 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				E349C64825D0227200161C62 /* Arduino BLE Switch */,
-				E349C65F25D0227400161C62 /* Arduino BLE SwitchTests */,
-				E349C66A25D0227400161C62 /* Arduino BLE SwitchUITests */,
 				E349C64725D0227200161C62 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,24 +103,6 @@
 				E349C65725D0227400161C62 /* Info.plist */,
 			);
 			path = "Arduino BLE Switch";
-			sourceTree = "<group>";
-		};
-		E349C65F25D0227400161C62 /* Arduino BLE SwitchTests */ = {
-			isa = PBXGroup;
-			children = (
-				E349C66025D0227400161C62 /* Arduino_BLE_SwitchTests.swift */,
-				E349C66225D0227400161C62 /* Info.plist */,
-			);
-			path = "Arduino BLE SwitchTests";
-			sourceTree = "<group>";
-		};
-		E349C66A25D0227400161C62 /* Arduino BLE SwitchUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E349C66B25D0227400161C62 /* Arduino_BLE_SwitchUITests.swift */,
-				E349C66D25D0227400161C62 /* Info.plist */,
-			);
-			path = "Arduino BLE SwitchUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +246,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E349C66125D0227400161C62 /* Arduino_BLE_SwitchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +253,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E349C66C25D0227400161C62 /* Arduino_BLE_SwitchUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
